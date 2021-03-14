@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>在线简历</title>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_908787_kekc8lrkg7e.css">
+  <style>
+    /*css reset*/ 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    } 
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+    /*common css  */
+    .pill {
+      background: #000;
+      color: #fff;
+      display: inline-block;
+      font-size: 14px;
+      width: 140px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 20px;;
+    }
+
+    .layout {
+      width: 21cm;
+      min-height: 29.7cm;
+      margin: 0 auto;
+    }
+
+    .clearfix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    /* page css*/
+    body {
+      font: 16px/1.5 SimSun, STKaiti, "Microsoft YaHei", SimHei, Helvetica, Arial;
+      color: #333;
+    }
+    
+    .wrapper {
+      background-color: #ececec;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding-top: 40px;
+    }
+
+    .aside {
+      float: left;
+      width: 240px;
+    }
+
+    .aside .user {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .aside .user h1{
+      font-size: 40px;
+    }
+
+    .aside .user h1::after {
+      content: '';
+      display: block;
+      width: 60px;
+      border-top: 1px solid #d6d6d6;
+      margin: 16px auto;
+    }
+
+    .aside .user::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      margin-top: 20px;
+      border-top: 20px solid #d6d6d6;
+      border-bottom: 20px solid transparent;
+      border-right: 140px solid #d6d6d6;
+      border-left: 140px solid transparent;
+    }
+
+    .aside .contact {
+      padding: 20px;
+    }
+
+    .aside .contact li {
+      border-bottom: 1px solid #d6d6d6;
+      list-style: none;
+      line-height: 40px;
+    }
+
+    .aside .contact .iconfont {
+      border-right: 1px solid #d6d6d6;
+      padding-right: 10px;
+      margin-right: 10px;
+      padding-left: 10px;
+      display: inline-block;
+      font-size: 20px;
+      color: #7bbaaa;
+    }
+
+    .aside .skills {
+      background: #7bbaaa;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .aside .skills dt {
+      color: #eee;
+      margin-top: 20px;
+    }
+
+    .aside .skills dd {
+      height: 4px;
+      background: #74c5b5;
+      border-radius: 2px;
+      margin-top: 10px;
+    }
+
+    .aside .skills .mastery {
+      height: 4px;
+      background: #fff;
+      display: block;
+      border-radius: 2px;
+    }
+
+    .aside .others h2 {
+      margin: 20px 0 0 20px;
+    }
+
+    .main {
+      margin-left: 280px;
+      background: #fff;
+      padding: 40px 40px;
+      margin-right: 20px;
+    }
+
+    strong{
+      color: #f60;
+    }
+
+    .main .intro {
+      overflow: auto;
+    }
+    .main .intro img {
+      width: 80px;
+      height: 80px;
+      float: left;
+    }
+
+    .main .intro p {
+      margin-left: 120px;
+    }
+
+    
+    .section .pill {
+      float: left;
+      margin-top: 5px;
+    }
+
+    .section h2{
+      font-size: 40px;
+      color: #d9d9d9;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .section .more {
+      border-left: 1px solid #eee;
+    }
+    .section h3 {
+      color: #666;
+      font-size: 20px;
+      font-weight: normal;
+    }
+    .section h3 strong{
+      color: #111;
+      font-weight: bold;
+    }
+
+    .section h3::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 6px;
+      border: 2px solid #7bbaaa;
+      margin-right: 20px;
+      position: relative;
+      left: -5px;
+    }
+
+    .section h4 {
+      color: #111;
+      margin-top: 20px;
+      margin-left: 40px;
+    }
+
+
+    .section .more ul {
+      margin-left: 50px;
+      padding-bottom: 20px;
+    }
+    .section .more li {
+      color: #666;
+      font-size: 14px;
+    }
+
+
+    @media print {
+      .aside {
+        width: 200px;
+      }
+      .main {
+        margin-left: 200px;
+      }
+      .aside .user::after {
+      border-right-width: 100px;
+      border-left-width: 100px;
+    }
+      .pill {
+        display: none;
+      }
+
+      .section .more {
+        margin-left: 20px;
+      }
+
+      .wrapper {
+        margin: 0;
+      }
+    }
+
+    .page2{
+    page-break-before: always;
+    margin-top: 30px;
+  }
+.url{
+  font-size: 14px;
+  margin-left: 20px;
+  color: blue;
+}
+
+  
+  </style>
+</head>
+<body>
+  <div class="wrapper layout clearfix">
+    <div class="aside">
+      <div class="user">
+        <h1>潘克淳</h1>
+        <p>应聘初级前端工程师</p>
+      </div>
+      <ul class="contact">
+        <li><span class="iconfont icon-email"></span> 2489964425@qq.com</li>
+        <li><span class="iconfont icon-phone"></span> 18608645531</li>
+        <li><span class="iconfont icon-education"></span> 专科</li>
+      </ul>
+      <div class="skills">
+          <h2>我的技能</h2>
+          <dl>
+            <dt>JavaScript/HTML5/CSS3</dt>
+            <dd><span class="mastery" style="width: 90%"></span></dd>
+            <dt>Vue全家桶</dt>
+            <dd><span class="mastery" style="width: 80%"></span></dd>
+            <dt>React全家桶</dt>
+            <dd><span class="mastery" style="width: 70%"></span></dd>
+            <dt>Node.js</dt>
+            <dd><span class="mastery" style="width: 50%"></span></dd>
+            <dt>Webpack/Parcel</dt>
+            <dd><span class="mastery" style="width: 70%"></span></dd>
+            <dt>ES6/Scss/less/Stylus</dt>
+            <dd><span class="mastery" style="width: 70%"></span></dd>
+          </dl>
+        </div>
+      <div class="others">
+        <h2>其他</h2>
+        <ul class="contact">
+            <li><span class="iconfont icon-github"></span> <a href="https://github.com/XiaoPan-Struggle">Github</a></li>
+            <li><span class="iconfont icon-blog"></span> <a href="https://www.zhihu.com/column/c_1319684150501130240">博客</a></li>
+          </ul>
+      </div>
+    </div>
+    <div class="main">
+      <div class="projects section">
+        <h2>项目经历</h2>
+        <div class="item">
+          <div class="more">
+            <h3>白杨UI<a class="url" href="https://pan__xiaopan.gitee.io/vite-vue/#/">效果预览</a><a class="url" href="https://github.com/XiaoPan-Struggle/vite-vue">源代码</a></h3>
+            <ul>
+              <li>
+                <p>做了PC端和移动端适配，将该项目 <strong>部署</strong> 在我的GitHub上</p>
+              </li>
+              <li>
+                <p>深入研究了 <strong>Vue3</strong>，使用了 <strong>setup，onMounted，ref，computed</strong>等Composition API</p>
+              </li>
+              <li>
+                <p>设计和实现了 Switch组件，Button组件，Dialog组件，Tabs组件</p>
+              </li>
+              <li>
+                <p>基于 <strong>Vue3+Typescript+Vite</strong> 开发的一款 UI 组件库</p>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="item">
+            <div class="more">
+              <h3>流水管家<a class="url" href="https://pan__xiaopan.gitee.io/money-steward-website/index.html">效果预览</a><a class="url" href="https://github.com/XiaoPan-Struggle/Money-steward">源代码</a></h3>
+              <ul>
+                <li>
+                  <p>一个基于 <strong> React / React Router / 自定义 Hooks / webpack / TypeScript / LocalStorage </strong> 的移动端单页面应用。</p>
+                </li>
+                <li>
+                  <p>这是一款极简记账应用，特点是快速记账，这是为了满足我自己的需求独立开发的一款应用</p>
+                </li>
+                <li>
+                  <p>该项目大量使用 <strong>Hooks API</strong>，让我对 <strong>Hooks</strong> 有了深刻的理解和应用</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+              <div class="more">
+                <h3>前站导航<a class="url" href="https://xiaopan-struggle.github.io/Navigation/src/">效果预览</a><a class="url" href="https://github.com/XiaoPan-Struggle/Navigation">源代码</a></h3>
+                <ul>
+                  <li>
+                    <p>一个使用 <strong>jQuery</strong> 技术开发的一个非常好用的网站导航的网页</p>
+                  </li>
+                  <li>
+                    <p>使用 <strong>localStorage</strong> 来存取数据，做了 <strong>移动端适配</strong>，<strong>封装了</strong> 长按删除的手势</p>
+                  </li>
+                  <li>
+                    <p>这是我从自己的需求触发，设计出的一个网站导航，将我经常访问的网页添加在页面中，直接跳转</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+                <div class="more">
+                  <h3>DOM库<a class="url" href="https://github.com/XiaoPan-Struggle/DOM-Package">源代码</a></h3>
+                  <ul>
+                    <li>
+                      <p>一款用 <strong>原生js</strong> 封装的一个 <strong>dom库</strong></p>
+                    </li>
+                    <li>
+                      <p>封装了一些常用的一些dom操作，提供api简化一些dom操作</p>
+                    </li>
+                    <li>
+                      <p>比如：元素的增删改查，事件绑定等等</p>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            <div class="item">
+              <div class="more">
+                <h3>图库<a class="url" href="https://github.com/XiaoPan-Struggle/gallery">源代码</a></h3>
+                <ul>
+                  <li>
+                    <p>一款用 <strong>uni-app</strong> 框架进行开发的一款微信小程序</p>
+                  </li>
+                  <li>
+                    <p>这是一款模仿手机壁纸应用的小程序，其中封装了一个左右滑动的手势</p>
+                  </li>
+                  <li>
+                    <p>第一次接触到封装，使用了第三方插件 <strong>moment.js</strong> 处理时间格式</p>
+                  </li>
+                </ul>
+              </div>
+          </div>
+      </div>
+      <div class="about-me section">
+        <h2>开源项目</h2>
+        <div class="item">
+          <div class="more">
+            <h3>会动的哆啦A梦<a class="url" href="https://xiaopan-struggle.github.io/dynamic-js/src/index.html">效果预览</a><a class="url" href="https://github.com/XiaoPan-Struggle/dynamic-js">源代码</a></h3>
+            <ul>
+              <li>
+                <p>这是我在学习 <strong>CSS3</strong> 和 <strong>动画</strong> 时结合 <strong>JS</strong> 制作的一个可爱的作品</p>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <div class="item page2">
+        <div class="more">
+          <h3>阉割版jQuery<a class="url" href="https://github.com/XiaoPan-Struggle/jQuery-Package">源代码</a></h3>
+          <ul>
+            <li>
+              <p>这是我在学习 <strong>jQuery</strong> 之后，自己用 <strong>原生js封装</strong> 的一个 <strong>仿jQuery的库</strong></p>
+            </li>
+            <li><p>实现了一些基本操作，以及实现了jQuery的链式编程</p></li>
+          </ul>
+        </div>
+    </div>
+    <div class="item">
+      <div class="more">
+        <h3>可视化面板<a class="url" href="https://xiaopan-struggle.github.io/Echats-Demo/">效果预览</a><a class="url" href="https://github.com/XiaoPan-Struggle/Echats-Demo">源代码</a></h3>
+        <ul>
+          <li>
+            <p>这是我使用 <strong>Echarts</strong> 定制化开发的一个网页</p>
+          </li>
+        </ul>
+      </div>
+  </div>
+  <div class="item">
+    <div class="more">
+      <h3>简易画板<a class="url" href="https://xiaopan-struggle.github.io/canvas-version-1/index.html">效果预览</a><a class="url" href="https://github.com/XiaoPan-Struggle/canvas-version-1">源代码</a></h3>
+      <ul>
+        <li>
+          <p>这是我在学习 <strong>Canvas</strong> 时做的一个小作品</p>
+        </li>
+      </ul>
+    </div>
+</div>
+      </div>
+      <div class="experience section">
+        <h2>技能展示</h2>
+        <div class="detail">
+          <div class="more">
+            <ul>
+              <li>熟悉页面制作技巧，能将设计稿 <strong></strong>完美还原，熟悉 <strong></strong>Echarts 定制化开发</li>
+              <li>熟悉前后端分离技术，包括 <strong>AJAX，跨域，前端路由</strong> 等</li>
+              <li>熟练掌握 <strong>Vue全家桶</strong> 的使用，包括 VueCli，VueRouter，Vuex等</li>
+              <li>熟练掌握 <strong>React全家桶</strong> 的使用，包括create-react-app，ReactRouter，Redux，Hook等</li>
+              <li>熟悉ES6，包括 <strong>let/Promise/await/解构赋值 </strong>等</li>
+              <li>了解 <strong>Typescript</strong> 的使用，并在项目中使用</li>
+              <li>了解 <strong>Webpack</strong> 的配置和优化,熟练使用 <strong>git，svn</strong>代码管理工具</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="experience section">
+        <h2>工作经历</h2>
+        <div class="detail">
+          <div class="more">
+            <h3><strong>成都瑜润信息技术有限公司</strong>, 前端开发工程师</h3>
+            <ul>
+              <li>工作期间参与开发和维护智慧工地的项目</li>
+              <li>给同事进行指导，提高开发效率</li>
+            </ul>
+            <h4>智慧工地Web端项目</h4>
+            <ul>
+              <li> 项目介绍：该项目的目的西安地铁8号线建设的工地管理系统。该项目采用前后分离的技术方案，
+                我主要负责前端部分的开发。项目前端使用Vue技术栈， ui使用Element。</li>
+              <li>技术栈：<strong>vue、vue-router、vuex、element-ui、webpack、es6</strong></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="education section">
+        <h2>教育经历</h2>
+        <div class="item">
+            <div class="more">
+              <h3><strong>武汉交通职业技术学院</strong></h3>
+              <p>计算机应用技术</p>
+            </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
